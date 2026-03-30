@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #0a1628;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Background campus image */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('sri-sri-university-cuttack-228257.jpg') center center / cover no-repeat;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.bg-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(27, 94, 32, 0.85) 0%, rgba(10, 22, 40, 0.8) 50%, rgba(27, 94, 32, 0.75) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.overlay {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal {
+    background: #ffffff;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+/* Green top bar */
+.top-bar {
+    background: linear-gradient(135deg, #1B5E20, #2E7D32);
+    color: white;
+    padding: 10px 24px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+
+.secure-badge {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.modal-content {
+    padding: 32px 36px;
+}
+
+/* Logo section */
+.logo-section {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.university-logo {
+    width: 90px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.logo-section h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1B5E20;
+    letter-spacing: -0.3px;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #888;
+    font-weight: 400;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #1B5E20, #C8A951, #1B5E20, transparent);
+    margin: 16px 0 20px;
+}
+
+/* WiFi info bar */
+.wifi-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #E8F5E9, #F1F8E9);
+    border: 1px solid #C8E6C9;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+}
+
+.wifi-icon {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(27, 94, 32, 0.15);
+}
+
+.wifi-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1B5E20;
+}
+
+.wifi-subtitle {
+    font-size: 12px;
+    color: #555;
+    margin-top: 2px;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 16px 12px 42px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.3s ease;
+    background: #fafafa;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #2E7D32;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(46, 125, 50, 0.1);
+}
+
+.form-group input::placeholder {
+    color: #bbb;
+    font-size: 13px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-top: 2px;
+    width: 16px;
+    height: 16px;
+    accent-color: #1B5E20;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.checkbox-group label {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.checkbox-group a {
+    color: #1B5E20;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.checkbox-group a:hover {
+    text-decoration: underline;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #1B5E20, #2E7D32);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #145218, #256B28);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(27, 94, 32, 0.35);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+.spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Help section */
+.help-section {
+    text-align: center;
+    margin-top: 20px;
+    padding: 14px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.help-section p {
+    font-size: 11px;
+    color: #888;
+    line-height: 1.6;
+}
+
+.help-section strong {
+    color: #1B5E20;
+}
+
+/* Footer */
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    background: #E8F5E9;
+    color: #1B5E20;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid #C8E6C9;
+    letter-spacing: 0.3px;
+}
+
+.copyright {
+    font-size: 11px;
+    color: #999;
+    margin-top: 6px;
+}
+
+.footer-address {
+    font-size: 10px;
+    color: #bbb;
+    margin-top: 3px;
+}
+
+/* Success Page */
+.success-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.success-modal {
+    background: white;
+    border-radius: 16px;
+    padding: 50px 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 102;
+}
+
+.success-logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1B5E20, #4CAF50);
+    color: white;
+    font-size: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+.success-modal h2 {
+    color: #1B5E20;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.success-modal p {
+    color: #666;
+    font-size: 14px;
+}
+
+.redirect-text {
+    margin-top: 16px;
+    font-style: italic;
+    color: #999 !important;
+    font-size: 13px !important;
+}
+
+.progress-bar {
+    margin-top: 20px;
+    height: 4px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #1B5E20, #4CAF50);
+    border-radius: 4px;
+    transition: width 3s linear;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 24px 20px;
+    }
+
+    .logo-section h1 {
+        font-size: 19px;
+    }
+
+    .university-logo {
+        width: 70px;
+    }
+
+    .form-group input {
+        padding: 10px 14px 10px 38px;
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .wifi-info {
+        padding: 10px 12px;
+    }
+}

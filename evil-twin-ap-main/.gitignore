@@ -1,0 +1,42 @@
+# Temporary files
+*.pid
+.evil_twin.pid
+.capture.pid
+
+# Log files
+logs/
+*.log
+
+# Packet capture files
+output/
+*.pcap
+*.cap
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary test files
+persistence_test.txt
+test_*
+
+# Editor files
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Compiled Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Credentials (just in case)
+*credentials*
+*password*
+*secret*
